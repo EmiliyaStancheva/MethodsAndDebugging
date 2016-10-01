@@ -1,0 +1,22 @@
+using System;
+
+
+namespace CalculateTriangleArea
+{
+    public class CalculateTriangleArea
+    {
+        public static void Main(string[] args)
+        {
+            double sideA = double.Parse(Console.ReadLine());
+            double height = double.Parse(Console.ReadLine());
+            Console.WriteLine(GetTriangleArea(sideA, height));
+            Console.Read();
+        }
+
+        static double GetTriangleArea(double sideA, double height)
+        {
+            double area= sideA * height / 2;
+            return area;
+        }
+    }
+}
