@@ -1,0 +1,31 @@
+using System;
+
+
+namespace DrawFilledSquare
+{
+    public class DrawFilledSquare
+    {
+        public static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            PrintFilledSquare(n);
+           
+            Console.Read();
+        }
+
+        private static void PrintFilledSquare(int n)
+        {
+            Console.WriteLine(new string('-', 2 * n));
+            for (int i = 1; i <= n - 2; i++)
+            {
+                Console.Write("-");
+                for (int j = 1; j <= n - 1; j++)
+                {
+                    Console.Write("\\/");
+                }
+                Console.WriteLine('-');
+            }
+            Console.WriteLine(new string('-', 2 * n));
+        }
+    }
+}
