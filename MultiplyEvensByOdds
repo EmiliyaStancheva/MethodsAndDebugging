@@ -1,0 +1,58 @@
+using System;
+
+
+namespace MultiplyEvensByOdds
+{
+    public class MultiplyEvensByOdds
+    {
+        public static void Main(string[] args)
+        {
+            int n = Math.Abs(int.Parse(Console.ReadLine()));
+            Console.WriteLine(GetMultipleOfEvensAndOdds(n));
+            Console.Read();
+        }
+
+        private static int GetSumOfOddDigits(int number)
+        {
+            int oddSum = 0;
+
+            while (number > 0)
+            {
+                int lastDigit = number % 10;
+                number = number / 10;
+
+                if (lastDigit % 2 != 0)
+                {
+                    oddSum += lastDigit;
+                }
+            }
+
+            return oddSum;
+        }
+
+        private static int GetSumOfEvenDigits(int number)
+        {
+            int evenSum = 0;
+
+            while (number > 0)
+            {
+                int lastDigit = number % 10;
+                number = number / 10;
+
+                if (lastDigit % 2 == 0)
+                {
+                    evenSum += lastDigit;
+                }
+            }
+
+            return evenSum;
+        }
+
+        private static int GetMultipleOfEvensAndOdds(int number)
+        {
+            int evenSum = GetSumOfEvenDigits(number);
+            int oddSum = GetSumOfOddDigits(number);
+            return evenSum * oddSum;
+        }
+    }
+}
